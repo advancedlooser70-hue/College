@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>CollegeHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+    <h1>CollegeHub</h1>
+    <p>Your college technical platform</p>
+    <nav class="tabs">
+        <button class="tab-button active" onclick="openTab('events')">Events</button>
+        <button class="tab-button" onclick="openTab('mentorship')">Mentorship</button>
+        <button class="tab-button" onclick="openTab('placements')">Placements</button>
+    </nav>
+</header>
+
+<main id="content-area">
+    <section id="login-section">
+        <h2>Student Login</h2>
+        <label for="studentIdInput">Student ID</label>
+        <input type="text" id="studentIdInput" placeholder="Enter Student ID" />
+        <button onclick="login()">Login</button>
+        <p id="loginMsg"></p>
+    </section>
+
+    <section id="events" class="tab-content" style="display:none;">
+        <h2>Upcoming Events</h2>
+        <div id="eventsContainer"></div>
+    </section>
+
+    <section id="mentorship" class="tab-content" style="display:none;">
+        <h2>Mentorship Program</h2>
+
+        <div id="alumniNetwork">
+            <h3>Alumni Network</h3>
+            <div id="alumniContainer"></div>
+        </div>
+
+        <div id="seniorNetwork" style="margin-top: 1.5rem;">
+            <h3>Senior Network</h3>
+            <div id="seniorContainer"></div>
+        </div>
+
+        <div id="mentorshipRequest" style="margin-top: 2rem;">
+            <h3>Request Mentorship</h3>
+            <form id="mentorshipForm" onsubmit="submitMentorshipRequest(event)">
+                <label for="menteeName">Your Name:</label><br />
+                <input id="menteeName" type="text" required /><br /><br />
+                <label for="fieldOfInterest">Area of Interest:</label><br />
+                <input id="fieldOfInterest" type="text" required /><br /><br />
+                <button type="submit">Request Mentorship</button>
+            </form>
+            <p id="mentorshipResponse" style="color:green;"></p>
+        </div>
+    </section>
+
+    <section id="placements" class="tab-content" style="display:none;">
+        <h2>Placement & Internship Notifications</h2>
+        <div id="placementsContainer"></div>
+    </section>
+</main>
+
+<footer>
+    <small>© 2025 CollegeHub. All rights reserved.</small>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
+
+
